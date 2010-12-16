@@ -144,10 +144,17 @@ blog.post_default_filters = {
     "html": "syntax_highlight, paragraph_permalinks"
 }
 
+
 ### Pre/Post build hooks:
+
 def pre_build():
-    #Do whatever you want before the _site is built
-    pass
+    # Compile CSS from SASS
+    subprocess.call(['sass',
+        '--scss',
+        '--style', 'compressed',
+        '--update', '_scss/site.scss:css/site.css',
+    ])
+
 def post_build():
     #Do whatever you want after the _site is built
     build_docs()
