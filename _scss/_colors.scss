@@ -1,0 +1,36 @@
+/* Blues */
+$primary-color-litest:  #d7e5f9;
+$primary-color-lite:    #8db6ef;
+$primary-color-med:     #4487e5;
+$primary-color-dark:    #1857ae;
+$primary-color-darkest: #0c2c59;
+
+/* Browns */
+$secondary-color-litest:  #f0e9e0;
+$secondary-color-lite:    #d4c0a8;
+$secondary-color-med:     #b99a70;
+$secondary-color-dark:    #846841;
+$secondary-color-darkest: #433521;
+
+/* Colors */
+$shadows: hsla(0%, 0%, 0%, 0.5);
+
+
+$header-bg: $primary-color-dark;
+$header-fg: white;
+
+$navbar-bg: $primary-color-darkest;
+$navbar-fg: white;
+$navbar-hover-bg: $primary-color-med;
+
+$body-bg: $secondary-color-lite;
+
+$content-bg: white;
+$content-fg: #404040;
+$content-border: $secondary-color-med;
+
+
+$h1-bg: $primary-color-dark;
+$h1-fg: white;
+$h1-shadow: hsla(0%, 0%, 0%, 0.25);
+$h1-page-title-bg: $primary-color-darkest;

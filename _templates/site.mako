@@ -7,18 +7,14 @@
     ${self.head()}
   </head>
   <body>
-    <div id="content">
-      ${self.header()}
-      <div id="main_block">
-        <div id="prose_block">
-          ${next.body()}
-        </div><!-- End Prose Block -->
-        ${self.sidebar()}
-      </div><!-- End Main Block -->
-      <div id="footer">
-        ${self.footer()}
-      </div> <!-- End Footer -->
-    </div> <!-- End Content -->
+    ${self.header()}
+    <div id="main">
+      <div id="content">
+        ${next.body()}
+      </div> <!-- End Content -->
+      ${self.sidebar()}
+    </div>
+    ${self.footer()}
   </body>
 </html>
 <%def name="head()">
@@ -31,7 +27,5 @@
   <%include file="footer.mako" />
 </%def>
 <%def name="sidebar()">
-  <div class="right_sidebar">
-    <%include file="sidebar.mako"  args="posts=posts" />
-  </div>
+  <%include file="sidebar.mako"  args="posts=posts" />
 </%def>

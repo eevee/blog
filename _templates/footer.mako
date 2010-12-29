@@ -1,3 +1,4 @@
+<div id="footer">
 <p id="credits">
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
@@ -24,3 +25,4 @@ href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
 //]]>
 </script>
 % endif
+</div>

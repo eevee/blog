@@ -1,0 +1,25 @@
+/******************************************************************************/
+// CSS3 smoothing
+
+// box-sizing: content-box|border-box
+@mixin box-sizing($sizing) {
+    box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    -webkit-box-sizing: $sizing;
+}
+
+/******************************************************************************/
+// Other mixins
+
+// Float containment
+@mixin contain-float {
+    &:after {
+        content: 'contain float';
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+    }
+    // IEs
+    zoom: 1;
+}

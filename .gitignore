@@ -5,3 +5,7 @@ _documentation/themes/blogofile/layout.html
 \#*
 .#*
 .*.swp
+.sass-cache
+
+# this is now auto-generated
+css/site.css
