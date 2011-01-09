@@ -1,14 +1,14 @@
-<%page args="post"/>
+<%page args="post, headerlevel=1"/>
 
-<% 
+<%
 import re
 post_id = re.sub("[ ?]","-",post.title.lower()) %>
 
+<h${headerlevel} class="blog_post_title"><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h${headerlevel}>
 <div class="blog_post" id="${post_id}">
   <a class="blog_post_title" name="${post.title}" />
-  <h2 class="blog_post_title"><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h2>
-  <small>${post.date.strftime("%B %d, %Y at %I:%M %p")} | categories: 
-<% 
+  <small>${post.date.strftime("%B %d, %Y at %I:%M %p")} | categories:
+<%
    category_links = []
    for category in post.categories:
        if post.draft:
@@ -22,9 +22,9 @@ ${", ".join(category_links)}
  | <a href="${post.permalink}#disqus_thread">View Comments</a>
 % endif
   </small>
-  <span class="post_prose">
+</div>
+<div class="prose">
     ${self.post_prose(post)}
-  </span>
 </div>
 
 <%def name="post_prose(post)">

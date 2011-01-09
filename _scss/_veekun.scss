@@ -148,11 +148,22 @@ h1 {
 
     #content > &:first-child,
     #content div > &:first-child {
-        margin-top: 0;
+        font-size: 2.5em;
+        margin: -0.4em -0.4em 0.5em;
+        padding: 0.25em 1em;
+        border-top: none;
         font-family: serif;  // XXX
         background-color: $h1-page-title-bg;
         text-transform: normal;
     }
+}
+
+h2 {
+    font-size: 1.5em;
+    padding: 0.33em 0.5em;
+    margin: 0.5em 0 0.5em;
+    background: $secondary-color-litest;
+    font-weight: normal;
 }
 
 p, li {
@@ -165,4 +176,9 @@ p + p {
 
 a {
     text-decoration: none;
+
+    h1 &,
+    h2 & {
+        color: inherit;
+    }
 }

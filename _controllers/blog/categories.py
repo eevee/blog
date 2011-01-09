@@ -60,7 +60,9 @@ def write_categories():
             bf.writer.materialize_template("chronological.mako", path, {
                     "posts": page_posts,
                     "prev_link": prev_link,
-                    "next_link": next_link })
+                    "next_link": next_link,
+                    "category_title": category.name,
+            })
             #Copy category/1 to category/index.html
             if page_num == 1:
                 shutil.copyfile(bf.util.path_join(bf.writer.output_dir,path),bf.util.path_join(

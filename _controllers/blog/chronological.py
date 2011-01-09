@@ -30,7 +30,9 @@ def write_blog_chron(posts,root):
         bf.writer.materialize_template("chronological.mako", fn,
             { "posts":page_posts,
               "next_link":next_link,
-              "prev_link":prev_link })
+              "prev_link":prev_link,
+              "category_title": posts[0].date.strftime("%B %Y")
+        })
         page_num += 1
         
 def write_blog_first_page():
@@ -42,7 +44,9 @@ def write_blog_first_page():
             next_link = bf.util.site_path_helper(blog.path,blog.pagination_dir+"/2")
         else:
             next_link = None
-        bf.writer.materialize_template("chronological.mako", path,
-            { "posts": page_posts,
-              "next_link": next_link,
-              "prev_link": None })
+        bf.writer.materialize_template("chronological.mako", path, {
+            "posts": page_posts,
+            "next_link": next_link,
+            "prev_link": None,
+            "category_title": None,
+        })
