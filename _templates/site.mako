@@ -8,8 +8,18 @@
   </head>
   <body>
     ${self.header()}
+    % if breadcrumbs:
+    <ul id="breadcrumbs">
+        % for url, label in breadcrumbs:
+        <li><a href="${url}">${label}</a></li>
+        % endfor
+    </ul>
+    % endif
     <div id="main">
       <div id="content">
+        % if title_in_page:
+        <h1>${title_in_page}</h1>
+        % endif
         ${next.body()}
       </div> <!-- End Content -->
       ${self.sidebar()}

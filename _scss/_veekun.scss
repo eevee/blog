@@ -20,7 +20,7 @@ body {
     position: relative;
 
     background: $header-bg;
-    background-image: 
+    background-image:
         -moz-repeating-linear-gradient(top left -45deg, rgba($primary-color-lite, 0.2) 0%, rgba($primary-color-lite, 0.2) 17%, transparent 17%, transparent 50%, rgba($primary-color-lite, 0.2) 50%, rgba($primary-color-lite, 0.2) 67%, transparent 67%, transparent 100%),
         -moz-linear-gradient(top, rgba($primary-color-lite, 0.75), rgba($primary-color-lite, 0));
     background-size: 3px 3px, auto auto;
@@ -80,9 +80,31 @@ ul#navbar {
     }
 }
 
+ul#breadcrumbs {
+    // margin: ???
+    margin: 0.67em 0 -2.67em;
+    padding-left: 3em;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: lowercase;
+
+    li {
+        display: inline-block;
+        line-height: 1;
+
+        &:after {
+            content: ' → ';
+        }
+
+        &:last-child:after {
+            content: ' ↓ ';
+        }
+    }
+}
+
 #main {
     @include contain-float;
-    padding: 2em 1em 8em;
+    padding: 3em 1em 8em;
 
     #content {
         border: 1px solid $content-border;
@@ -122,23 +144,23 @@ ul#navbar {
 ////// Common elements
 h1 {
     font-size: 2em;
-    margin: 0.25em -0.5em 0.5em;
-    padding: 0.125em 1em;
+    margin: 1em -0.5em 0.5em;
+    padding: 0.25em 1em;
     border: 1px solid $h1-bg;
     border-width: 1px 0;
     background: $h1-bg;
     /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000'); */
     background-image: -webkit-gradient(linear, left top, left bottom,
-        from(           hsla(0%, 0%, 100%, 0.625)),
-        to(             hsla(0%, 0%, 0%, 0.25)),
-        color-stop(50%, hsla(0%, 0%, 100%, 0.5)),
-        color-stop(75%, hsla(0%, 0%, 100%, 0.25))
+        from(           hsla(0%, 0%, 100%, 0.3)),
+        to(             hsla(0%, 0%, 100%, 0)),
+        color-stop(50%, hsla(0%, 0%, 100%, 0.25)),
+        color-stop(75%, hsla(0%, 0%, 100%, 0.15))
     );
     background-image: -moz-linear-gradient(top,
-        hsla(0%, 0%, 100%, 0.25),
-        hsla(0%, 0%, 100%, 0.2) 50%,
-        hsla(0%, 0%, 100%, 0.1) 75%,
-        hsla(0%, 0%, 0%, 0.1)
+        hsla(0%, 0%, 100%, 0.3),
+        hsla(0%, 0%, 100%, 0.25) 50%,
+        hsla(0%, 0%, 100%, 0.15) 75%,
+        hsla(0%, 0%, 100%, 0)
     );
     color: $h1-fg;
     text-shadow: 1px 1px 1px $h1-shadow;
@@ -149,7 +171,7 @@ h1 {
     #content > &:first-child,
     #content div > &:first-child {
         font-size: 2.5em;
-        margin: -0.4em -0.4em 0.5em;
+        margin: -0.4em -0.4em 0.4em;
         padding: 0.25em 1em;
         border-top: none;
         font-family: serif;  // XXX
@@ -159,12 +181,28 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
-    padding: 0.33em 0.5em;
-    margin: 0.5em 0 0.5em;
-    background: $secondary-color-litest;
+    font-size: 1.67em;
+    margin: 1em 0 0.5em;
+    padding: 0.25em 1em;
     font-weight: normal;
+    background: $secondary-color-lite;
+    background-image:
+        -moz-repeating-linear-gradient(top left -45deg, rgba($secondary-color-litest, 0.5) 0%, rgba($secondary-color-litest, 0.5) 17%, transparent 17%, transparent 50%, rgba($secondary-color-litest, 0.5) 50%, rgba($secondary-color-litest, 0.5) 67%, transparent 67%, transparent 100%);
+    background-size: 3px 3px;
+    border: 1px solid $secondary-color-lite;
+    border-radius: 1em;
 }
+
+.doorhanger {
+    margin: -1em 0 1em;
+    padding: 0.5em;
+    background: $primary-color-lite;
+    border-radius: 0 0 0.5em 0.5em;
+    box-shadow:
+        0 3px 3px -3px $shadows inset,
+        0 0 3px rgba($shadows, 0.25);
+}
+
 
 p, li {
     line-height: 1.33;
@@ -176,9 +214,16 @@ p + p {
 
 a {
     text-decoration: none;
+    font-weight: bold;
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover;
+    }
 
     h1 &,
     h2 & {
+        font-weight: inherit;
         color: inherit;
     }
 }

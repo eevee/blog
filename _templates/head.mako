@@ -1,4 +1,4 @@
-<title>${bf.config.blog.name}</title>
+<title>${u' - '.join(reversed( [bf.config.blog.name] + [label for url, label in breadcrumbs or []] + [title_in_page or ''] ))}</title>
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed')}" />
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0"
 href="${bf.util.site_path_helper(bf.config.blog.path,'/feed/atom')}" />

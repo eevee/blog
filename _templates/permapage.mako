@@ -1,5 +1,5 @@
 <%inherit file="site.mako" />
-<%include file="post.mako" args="post=post" />
+<%include file="post.mako" args="post=post, show_title=False" />
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_url = "${post.permalink}";

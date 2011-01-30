@@ -1,14 +1,7 @@
 <%inherit file="site.mako" />
 
-% if category_title:
-<h1>${category_title}</h1>
-% endif
-
 % for post in posts:
-  <%include file="post.mako" args="post=post, headerlevel=2" />
-% if bf.config.blog.disqus.enabled:
-  <div class="after_post"><a href="${post.permalink}#disqus_thread">Read and Post Comments</a></div>
-% endif
+  <%include file="post.mako" args="post=post" />
 % endfor
 
 % if prev_link:

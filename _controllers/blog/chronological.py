@@ -31,7 +31,10 @@ def write_blog_chron(posts,root):
             { "posts":page_posts,
               "next_link":next_link,
               "prev_link":prev_link,
-              "category_title": posts[0].date.strftime("%B %Y")
+              "breadcrumbs": [
+                  (blog.path, "Blog"),
+              ],
+              "title_in_page": posts[0].date.strftime("%B %Y"),
         })
         page_num += 1
         
@@ -48,5 +51,5 @@ def write_blog_first_page():
             "posts": page_posts,
             "next_link": next_link,
             "prev_link": None,
-            "category_title": None,
+            "title_in_page": bf.config.blog.name,
         })

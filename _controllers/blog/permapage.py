@@ -23,7 +23,16 @@ def write_permapages():
         except OSError:
             pass
 
-        attrs = { "post": post, "posts": blog.posts }
+        attrs = {
+            "post": post,
+            "posts": blog.posts,
+            "breadcrumbs": [
+                (blog.path, "Blog"),
+                (bf.util.path_join(blog.path, post.date.strftime("archive/%Y/%m/1")),
+                    post.date.strftime("%B %Y")),
+            ],
+            "title_in_page": post.title,
+        }
 
         #Find the next and previous posts chronologically
         for post_num in range(0,len(blog.posts)):

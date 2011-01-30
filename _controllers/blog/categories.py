@@ -61,7 +61,10 @@ def write_categories():
                     "posts": page_posts,
                     "prev_link": prev_link,
                     "next_link": next_link,
-                    "category_title": category.name,
+                    "breadcrumbs": [
+                        (blog.path, "Blog"),
+                    ],
+                    "title_in_page": category.name,
             })
             #Copy category/1 to category/index.html
             if page_num == 1:
