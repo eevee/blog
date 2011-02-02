@@ -23,16 +23,20 @@ $header-fg: white;
 
 $navbar-bg: $primary-color-darkest;
 $navbar-fg: white;
-$navbar-hover-bg: $primary-color-med;
+$navbar-hover-bg: $primary-color-dark;
+$navbar-sub-bg: rgba($primary-color-litest, 0.9);
+$navbar-sub-fg: $primary-color-darkest;
+$navbar-sub-hover-bg: mix($primary-color-litest, $primary-color-dark, 60%);
+$navbar-sub-hover-fg: $primary-color-darkest;
 
 $body-bg: $secondary-color-lite;
 
 $content-bg: white;
 $content-fg: #404040;
-$content-border: $secondary-color-med;
+$content-border: $secondary-color-dark;
 
-$link-color: #0c2c59;
-$link-hover: #590c0c;
+$link-color: $primary-color-darkest;
+$link-hover: adjust-hue($link-color, -240deg);
 
 
 $h1-bg: $primary-color-dark;

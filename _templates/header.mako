@@ -12,10 +12,33 @@
   </div>
 </div>
 <ul id="navbar">
-  <li>Blog</li>
-  <li><a href="/">Back to veekun</a></li>
-  <li><a href="/">Home</a></li>
-  <li><a href="${bf.util.site_path_helper('/documentation')}">Documentation</a></li>
-  <li><a href="${bf.util.site_path_helper('/community')}">Community</a></li>
-  <li><a href="${bf.config.util.site_path_helper(bf.config.blog.path)}">Blog</a></li>
+    <li><a href="http://veekun.com/">← Return to veekun</a></li>
+    <li><a href="/">Home</a></li>
+    <li>
+      <a href="${bf.config.util.site_path_helper(bf.config.blog.path)}">Blog ▾</a>
+      <ul>
+          % for post in bf.config.blog.posts[:5]:
+          <li><a href="${post.path}">${post.title}</a></li>
+          % endfor
+      </ul>
+    </li>
+    <li>
+        <a href="/todo">Blog categories ▾</a>
+        <ul>
+            % for category, num_posts in bf.config.blog.all_categories:
+            <li>
+                <a href="${category.path}">${category} (${num_posts})</a>
+                <!--(<a href="${category.path}/feed">rss</a>)-->
+            </li>
+            % endfor
+        </ul>
+    </li>
+    <li>
+        <a href="/todo">Blog archives ▾</a>
+        <ul>
+            % for link, name, num_posts in bf.config.blog.archive_links:
+            <li><a href="${bf.util.site_path_helper(bf.config.blog.path,link)}/1" title="${name}">${name} (${num_posts})</a></li>
+% endfor
+        </ul>
+    </li>
 </ul>

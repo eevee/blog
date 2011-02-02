@@ -21,8 +21,7 @@
         <h1>${title_in_page}</h1>
         % endif
         ${next.body()}
-      </div> <!-- End Content -->
-      ${self.sidebar()}
+      </div>
     </div>
     ${self.footer()}
   </body>
@@ -35,7 +34,4 @@
 </%def>
 <%def name="footer()">
   <%include file="footer.mako" />
-</%def>
-<%def name="sidebar()">
-  <%include file="sidebar.mako"  args="posts=posts" />
 </%def>

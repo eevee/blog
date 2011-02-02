@@ -45,6 +45,7 @@ body {
 ul#navbar {
     font-weight: bold;
     color: $navbar-fg;
+    border-top: 1px solid $navbar-bg;
     background: $navbar-bg;
     background-image: -webkit-gradient(linear, left top, left bottom,
         from(hsla(0%, 0%, 100%, 0.1)),
@@ -57,25 +58,48 @@ ul#navbar {
 
     box-shadow: 0;
 
-    li {
+    > li {
         display: inline-block;
-        margin: 0 0.5em;
+        margin: 0 0.33em;
 
-        a {
+        > a {
             display: block;
-            padding: 0.33em 0.5em;
-            border: 1px solid transparent;
+            padding: 0.33em 0.67em;
             color: $navbar-fg;
+        }
+        &:hover {
+            background: $navbar-hover-bg;
+            background-image: -moz-linear-gradient(top,
+                hsla(0%, 0%, 100%, 0.1),
+                hsla(0%, 0%, 0%, 0.15)
+            );
+        }
 
-            &:hover {
-                background: $navbar-hover-bg;
-                background-image: -moz-linear-gradient(top,
-                    hsla(0%, 0%, 100%, 0.1),
-                    hsla(0%, 0%, 0%, 0.15)
-                );
-                border-color: $navbar-bg;
-                box-shadow: 0 0 1px $navbar-fg;
+        > ul {
+            position: absolute;
+            display: none;
+            width: 20em;
+            border: 2px solid $navbar-hover-bg;
+            border-top: none;
+            background: $navbar-sub-bg;
+            box-shadow: 1px 1px 3px $shadows;
+
+            > li {
+                > a {
+                    display: block;
+                    padding: 0.33em 0.5em;
+                    font-weight: normal;
+                    color: $navbar-sub-fg;
+
+                    &:hover {
+                        background: $navbar-sub-hover-bg;
+                        color: $navbar-sub-hover-fg;
+                    }
+                }
             }
+        }
+        &:hover > ul {
+            display: block;
         }
     }
 }
@@ -107,24 +131,10 @@ ul#breadcrumbs {
     padding: 3em 1em 8em;
 
     #content {
+        padding: 1em;
         border: 1px solid $content-border;
         background: $content-bg;
         color: $content-fg;
-    }
-
-    // These are only used in case of a sidebar
-    #content {
-        @include box-sizing(border-box);
-        float: left;
-        width: 80%;
-        padding: 1em;
-    }
-
-    #sidebar {
-        @include box-sizing(border-box);
-        float: left;
-        width: 20%;
-        padding: 1em;
     }
 }
 
