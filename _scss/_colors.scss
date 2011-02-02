@@ -1,16 +1,18 @@
 /* Blues */
-$primary-color-litest:  #d7e5f9;
-$primary-color-lite:    #8db6ef;
-$primary-color-med:     #4487e5;
-$primary-color-dark:    #1857ae;
-$primary-color-darkest: #0c2c59;
+$primary-color:             hsl(216, 60%, 0%);
+$primary-color-litest:      lighten($primary-color, 90%);
+$primary-color-lite:        lighten($primary-color, 75%);
+$primary-color-med:         lighten($primary-color, 58%);
+$primary-color-dark:        lighten($primary-color, 39%);
+$primary-color-darkest:     lighten($primary-color, 20%);
 
 /* Browns */
-$secondary-color-litest:  #f0e9e0;
-$secondary-color-lite:    #d4c0a8;
-$secondary-color-med:     #b99a70;
-$secondary-color-dark:    #846841;
-$secondary-color-darkest: #433521;
+$secondary-color:           hsl(33, 25%, 0%);
+$secondary-color-litest:    lighten($secondary-color, 90%);
+$secondary-color-lite:      lighten($secondary-color, 75%);
+$secondary-color-med:       lighten($secondary-color, 58%);
+$secondary-color-dark:      lighten($secondary-color, 39%);
+$secondary-color-darkest:   lighten($secondary-color, 20%);
 
 /* Colors */
 $shadows: hsla(0%, 0%, 0%, 0.5);
