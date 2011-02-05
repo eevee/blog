@@ -5,8 +5,7 @@ import re
 post_id = re.sub("[ ?]","-",post.title.lower()) %>
 
 % if show_title:
-<a class="blog_post_title" name="${post.title}" />
-<h1 class="blog_post_title"><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h1>
+<h1 class="blog_post_title"><a href="${post.permapath()}" name="${post.title}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h1>
 % endif
 <%
    if post.draft:

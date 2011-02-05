@@ -45,7 +45,7 @@ body {
 ul#navbar {
     font-weight: bold;
     color: $navbar-fg;
-    border-top: 1px solid $navbar-bg;
+    padding-top: 1px;
     background: $navbar-bg;
     background-image: -webkit-gradient(linear, left top, left bottom,
         from(hsla(0%, 0%, 100%, 0.1)),
@@ -168,8 +168,8 @@ h1 {
     );
     background-image: -moz-linear-gradient(top,
         hsla(0%, 0%, 100%, 0.3),
-        hsla(0%, 0%, 100%, 0.25) 50%,
-        hsla(0%, 0%, 100%, 0.15) 75%,
+        hsla(0%, 0%, 100%, 0.25) 33%,
+        hsla(0%, 0%, 100%, 0.15) 67%,
         hsla(0%, 0%, 100%, 0)
     );
     color: $h1-fg;
@@ -187,6 +187,11 @@ h1 {
         font-family: serif;  // XXX
         background-color: $h1-page-title-bg;
         text-transform: normal;
+
+        & + h1 {
+            margin-top: -0.5em;
+            border-top: none;
+        }
     }
 }
 
@@ -207,6 +212,7 @@ h2 {
     margin: -1em 0 1em;
     padding: 0.5em;
     background: $primary-color-lite;
+    color: black;
     border-radius: 0 0 0.5em 0.5em;
     box-shadow:
         0 3px 3px -3px $shadows inset,
@@ -218,8 +224,8 @@ p, li {
     line-height: 1.33;
 }
 
-p + p {
-    margin-top: 0.5em;
+p {
+    margin-bottom: 0.5em;
 }
 
 a {
@@ -235,5 +241,25 @@ a {
     h2 & {
         font-weight: inherit;
         color: inherit;
+    }
+}
+
+
+////// Useful classes
+
+// Markdown contents
+.prose {
+    ul {
+        margin: 1em;
+        padding-left: 1em;
+        text-indent: -1em;
+
+        li {
+            margin-bottom: 0.5em;
+
+            &:before {
+                content: '»';
+            }
+        }
     }
 }
