@@ -30,17 +30,3 @@ function paragraphPermalinks(){
           )
         });
 }
-
-function twitterSidebar(){
-  $j("#blogofile_tweets").tweet({
-      avatar_size: 32,
-        count: 5,
-        query: "blogofile",
-        loading_text: "searching twitter..."
-        });
-}
-
-$j(document).ready(function(){
-    twitterSidebar();
-    paragraphPermalinks();
-  });

@@ -13,6 +13,9 @@ config = {"name"        : "Photo Gallery",
 photos_dir = os.path.join("demo","photo_gallery")
 
 def run():
+    # XXX This won't work until it's actually fleshed out; the above directory
+    # is gone, for starters.
+    return
     photos = read_photos()
     write_pages(photos)
     write_photo_index(photos)
