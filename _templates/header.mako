@@ -7,7 +7,7 @@
       <input type="hidden" name="oe" value="UTF-8">
       <input type="hidden" name="domains" value="${urlparse.urlparse(bf.config.site.url)[1]}">
       <input type="hidden" name="sitesearch" value="${urlparse.urlparse(bf.config.site.url)[1]}">
-      <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
+      <input name="q" id="q" size="20" placeholder="search" type="text">
     </form>
   </div>
 </div>
