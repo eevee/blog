@@ -1,6 +1,10 @@
 @import "reset";
 @import "veekun";
+@import "colors";
 
-// Particular overrides for the blog layout
-
-// Sidebar layout
+// Disqus container
+#disqus_thread {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid $secondary-color-med;
+}

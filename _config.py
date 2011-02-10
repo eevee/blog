@@ -76,7 +76,7 @@ blog.auto_permalink.path    = "/blog/:year/:month/:day/:title"
 ######################################################################
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
-blog.disqus.name    = "blogofile"
+blog.disqus.name    = "veekun"
 
 ### Syntax highlighter ###
 # You can change the style to any builtin Pygments style
