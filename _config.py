@@ -54,10 +54,10 @@ blog.name        = "veekun: fuzzy notepad"
 blog.description = "a lot of words, sometimes of interest"
 
 ## blog_timezone -- the timezone that you normally write your blog posts from
-blog.timezone    = "US/Eastern"
+blog.timezone    = "US/Pacific"
 
 ## blog_posts_per_page -- Blog posts per page
-blog.posts_per_page = 5
+blog.posts_per_page = 10
 
 # Automatic Permalink
 # (If permalink is not defined in post article, it's generated
