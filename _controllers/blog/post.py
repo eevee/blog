@@ -85,6 +85,9 @@ class Post:
         self.guid       = None
         self.draft      = False
         self.filters    = None
+
+        self.mood       = None
+
         self.__parse()
         self.__post_process()
         

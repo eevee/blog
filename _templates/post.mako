@@ -18,13 +18,17 @@ post_id = re.sub("[ ?]","-",post.title.lower()) %>
         ]
 %>
 <div class="doorhanger">
+    % if post.mood and False:
+    <img src="http://stuff.veekun.com/veemotes/baw.png">
+    % endif
+
     ${post.date.strftime("%B %d, %Y at %I:%M %p")}
     % if category_links:
     in ${", ".join(category_links)}
     % endif
 
     % if bf.config.blog.disqus.enabled:
-    <a href="${post.permalink}#disqus_thread">View comments</a>
+    <a class="js-disqus-comment-count" href="${post.permalink}#disqus_thread">View comments</a>
     % endif
 </div>
 <div class="prose">

@@ -2,9 +2,14 @@
 @import "veekun";
 @import "colors";
 
-// Disqus container
+// Disqus junk
 #disqus_thread {
     margin-top: 1em;
     padding-top: 1em;
     border-top: 1px solid $secondary-color-med;
+}
+
+.doorhanger a.js-disqus-comment-count {
+    display: block;
+    float: right;
 }
