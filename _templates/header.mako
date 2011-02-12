@@ -1,6 +1,8 @@
 <% import urlparse %>
-<div id="header" onclick="location.href='${bf.util.site_path_helper()}';" style="cursor: pointer;">
-  <div id="title">${bf.config.blog.name}</div>
+<div id="header">
+  <div id="title">
+    <a href="${bf.util.site_path_helper()}">${bf.config.blog.name}</a>
+  </div>
   <div id="search">
     <form id="searchform" method="get" action="http://www.google.com/search">
       <input type="hidden" name="ie" value="UTF-8">

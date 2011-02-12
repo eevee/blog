@@ -32,6 +32,10 @@ body {
         font-weight: bold;
         color: $header-fg;
         text-transform: lowercase;
+
+        a {
+            color: $header-fg;
+        }
     }
 
     #search {
