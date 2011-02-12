@@ -2,6 +2,7 @@
 categories: status
 tags: veekun, floof, raidne, dywypi
 date: 2011/02/12 00:15:00
+updated: 2011/02/12 14:43:00
 title: Status recap
 mood: content
 ---
@@ -46,6 +47,7 @@ I use my servers for a variety of things and slap most of it under the veekun "b
 
 * Make the blog automatically rebuild itself without my intervention.  I don't think this is reasonably possible since the repository and the built files are on different machines, so I'll probably just end up writing a little shell script.  Then I can bind it to F17 and press one key to update my blog.  Rad.
 * Whip up a landing page for ["meta"][meta], which is currently kind of a catchall subdomain for stuff related to my machines.  I have a lot of crap running, and I think it'd be nice to have a little overview of what it all is.
+* Find a way to get gitweb to show recent commits across _all_ projects.  I have a lot of them and browsing for recent activity is currently a giant pain.  Might be easier to just use Redmine's global activity whatsit for this.
 
 
 ## floof
@@ -65,11 +67,13 @@ Those are by far the most important for me; after that I might go for something 
 
 ## raidne
 
-I don't know who actually remembers this, but [raidne][raidne] is one of my guilty pleasure projects: it'll likely never be finished, it doesn't have an obvious target audience, and I work on it fairly rarely.  It's intended to be a modernish roguelike, but biased more towards exploration and item collection than Smogon-like stat improvement.
+I don't know who actually remembers this, but raidne is one of my guilty pleasure projects: it'll likely never be finished, it doesn't have an obvious target audience, and I work on it fairly rarely.  It's intended to be a modernish roguelike, but biased more towards exploration and item collection than Smogon-like stat improvement.
 
 So far it, uh, has [a dude][u263b] who can work around.  I've spent far more time on architecture than any actual game stuff so far, but I don't think that's a bad thing.
 
 I need to do _everything_ next.  Right now I'm trying to make the main UI work: scrollable map, scrollable backlog of messages, and a little status window.  I'm using [urwid][urwid], which is fabulous except for its [abysmal documentation][urwid docs].  :(  If I get a significant chunk of time to work on this soon, I'm going to take notes on what I learn from sourcediving and try to contribute some doc patches to urwid.
+
+It could also stand to get promoted to a first-class project; public repository, bug tracker project, some tickets filed, etc.
 
 
 ## dywypi (2.0)
@@ -80,14 +84,15 @@ I'm trying to wire together [twisted words][twisted words] (Python's excellent n
 
 **I need to do**:
 
+* As above, needs some actual project love.
 * Finish the basic plugin registration API.  The idea is for plugins to decorate methods that should be commands, then allow running them with `plugin.command`.  Commands can also have global names registered, but I want them to explicitly ask for this for each command; supybot comes with a proliferation of plugins that all have tons of commands with similar names, and it tries to guess which command in which plugin you mean, and it's left a bad taste in my mouth.
 * Support a special `core` plugin, which would have commands for high-level stuff like loading plugins.
 * Add configuration and make the thing run under twistd.
 * Allow plugins to respond to events other than active commands.  A common example is watching for URLs and doing something with them, or noticing when people enter/leave.
 * Allow plugins to run asynchronously, whatever that means.  There are several distinct use cases here, and I might just scrawl an API for each to encourage API authors not to do heavy synchronous work.
-  # Communicating with another server in response to an event.  Twisted is built for this, so.
-  # Long-running polling, such as listening to a pipe.  (I want this for a git commit bot!)  Twisted can take care of this, too, but the tricky bit is having it run continuously in the background.
-  # Processing that just outright takes a long time.  I'm a little doubtful that this should happen with an IRC bot, but who knows.  I _think_ Twisted has some facility for dealing with this, if you write your code politely, but I haven't used it enough to be sure.
+    1. Communicating with another server in response to an event.  Twisted is built for this, so.
+    2. Long-running polling, such as listening to a pipe.  (I want this for a git commit bot!)  Twisted can take care of this, too, but the tricky bit is having it run continuously in the background.
+    3. Processing that just outright takes a long time.  I'm a little doubtful that this should happen with an IRC bot, but who knows.  I _think_ Twisted has some facility for dealing with this, if you write your code politely, but I haven't used it enough to be sure.
 * Authn/authz.  Suddenly, far more complicated!  I really really want to make this integrate with IRC services rather than building a parallel user list, but I don't know how feasible that is.  Nobody has tried it before; is that because it's really hard, or because nobody thought of it?
 
 I don't think any of this is particularly difficult, up until the last bit.  I threw together the plugin core in an hour or so, and it does some nifty tricks.  Just need to do enough on important projects to earn some time on this one.
