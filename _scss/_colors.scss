@@ -1,5 +1,5 @@
 /* Blues */
-$primary-color:             hsl(216, 60%, 0%);
+$primary-color:             hsl(216, 50%, 0%);
 $primary-color-litest:      lighten($primary-color, 90%);
 $primary-color-lite:        lighten($primary-color, 75%);
 $primary-color-med:         lighten($primary-color, 58%);
@@ -26,7 +26,7 @@ $navbar-fg: white;
 $navbar-hover-bg: $primary-color-dark;
 $navbar-sub-bg: rgba($primary-color-litest, 0.9);
 $navbar-sub-fg: $primary-color-darkest;
-$navbar-sub-hover-bg: mix($primary-color-litest, $primary-color-dark, 60%);
+$navbar-sub-hover-bg: mix($primary-color-litest, $primary-color-dark, 75%);
 $navbar-sub-hover-fg: $primary-color-darkest;
 
 $body-bg: $secondary-color-lite;
@@ -35,11 +35,11 @@ $content-bg: white;
 $content-fg: #404040;
 $content-border: $secondary-color-dark;
 
-$link-color: $primary-color-darkest;
+$link-color: $primary-color-dark;
 $link-hover: adjust-hue($link-color, -240deg);
 
 
 $h1-bg: $primary-color-dark;
 $h1-fg: white;
 $h1-shadow: hsla(0%, 0%, 0%, 0.25);
-$h1-page-title-bg: $primary-color-darkest;
+$h1-page-title-bg: $primary-color-dark;

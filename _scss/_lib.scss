@@ -3,9 +3,27 @@
 
 // box-sizing: content-box|border-box
 @mixin box-sizing($sizing) {
-    box-sizing: $sizing;
     -moz-box-sizing: $sizing;
     -webkit-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+// Use a gradient as a property value.
+// Call as gradient(property, linear-gradient(...))
+@mixin gradient($property, $gradient-value) {
+    #{$property}: -moz-#{$gradient-value};
+    #{$property}: -webkit-#{$gradient-value};
+    #{$property}: -o-#{$gradient-value};
+    #{$property}: #{$gradient-value};
+}
+
+// Use two gradients as a property value, e.g., multiple backgrounds.
+// gradient2(property, linear-gradient(...), linear-gradient(...))
+@mixin gradient2($property, $gradient-value, $gradient-value2) {
+    #{$property}: -moz-#{$gradient-value},      -moz-#{$gradient-value2};
+    #{$property}: -webkit-#{$gradient-value},   -webkit-#{$gradient-value2};
+    #{$property}: -o-#{$gradient-value},        -o-#{$gradient-value2};
+    #{$property}: #{$gradient-value},           #{$gradient-value2};
 }
 
 /******************************************************************************/
