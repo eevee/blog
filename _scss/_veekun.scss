@@ -20,27 +20,22 @@ body {
     position: relative;
 
     background: $header-bg;
-    @include gradient2(
+    @include gradient(
         background-image,
         repeating-linear-gradient(
             top left,
-            rgba($primary-color-lite, 0.2) 0%,
-            rgba($primary-color-lite, 0.2) 17%,
+            rgba($primary-color-lite, 0.5) 0%,
+            rgba($primary-color-lite, 0.5) 17%,
             transparent 17%,
             transparent 50%,
-            rgba($primary-color-lite, 0.2) 50%,
-            rgba($primary-color-lite, 0.2) 67%,
+            rgba($primary-color-lite, 0.5) 50%,
+            rgba($primary-color-lite, 0.5) 67%,
             transparent 67%,
             transparent 100%
-        ),
-        linear-gradient(
-            top,
-            rgba($primary-color-lite, 0.75),
-            rgba($primary-color-lite, 0)
         )
     );
     background-size: 3px 3px, auto auto;
-    box-shadow: 0 0 1em $primary-color-med inset;
+    box-shadow: 0 -1em 1em -1em $primary-color-dark inset;
 
     #title {
         font-size: 4em;
@@ -78,8 +73,7 @@ ul#navbar {
             hsla(0%, 0%, 0%, 0.15)
         )
     );
-
-    box-shadow: 0;
+    box-shadow: 0 0 0.5em $shadows;
 
     > li {
         display: inline-block;
@@ -216,9 +210,8 @@ h1 {
             background-image,
             linear-gradient(
                 top,
-                hsla(0%, 0%, 100%, 0.4) 0%,
-                hsla(0%, 0%, 100%, 0.1) 20%,
-                transparent 80%,
+                hsla(0%, 0%, 100%, 0.25) 0%,
+                hsla(0%, 0%, 100%, 0.1) 80%,
                 hsla(0%, 0%, 0%, 0.1) 100%
             )
         );

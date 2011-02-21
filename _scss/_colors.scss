@@ -15,10 +15,10 @@ $secondary-color-dark:      lighten($secondary-color, 39%);
 $secondary-color-darkest:   lighten($secondary-color, 20%);
 
 /* Colors */
-$shadows: hsla(0%, 0%, 0%, 0.5);
+$shadows: black;
 
 
-$header-bg: $primary-color-dark;
+$header-bg: $primary-color-med;
 $header-fg: white;
 
 $navbar-bg: $primary-color-darkest;
