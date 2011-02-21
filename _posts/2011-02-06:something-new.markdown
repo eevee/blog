@@ -12,7 +12,7 @@ A sad tale, sure.  But on a more personal note, LJ is just not fun for me to use
 
 And so, I depart LJ to do [exactly that][blogofile].  This blog is [stored in git][git repo], formatted as [Markdown][markdown], and built into mere static pages by a few small Python scripts.
 
-The comments, alas, are powered by [Disqus][disqus].  I apologize profusely for this, to those of you who would actually care.  I thought long and hard about this, but ultimately I came to the realization that my blog is about what _I_ say, not what _you_ say, and as such it shouldn't really matter what the commenting mechanism looks like.  If you don't want to allow the necessary JavaScript but you really have something to say, you can always be old-school and [email me][email].
+The comments, alas, are powered by [Disqus][disqus].  I apologize profusely for this, to those of you who would actually care.  I thought long and hard about this, but ultimately I came to the realization that my blog is about things _I want to say_, not so much what others say in response, and so it shouldn't really matter what the commenting mechanism looks like.  If you don't want to allow the necessary JavaScript but you really have something to say, you can always be old-school and [email me][email].
 
 Now, then.  I've spent far too long just nitpicking the design of this thing (which I intend to finish up and apply to veekun proper, eventually).  Let's see if this legitimately makes me more interested in blogging.
 
