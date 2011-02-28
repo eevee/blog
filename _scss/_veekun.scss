@@ -297,16 +297,15 @@ code {
 .prose {
     ul {
         margin: 1em;
-        padding-left: 0.5em;
-        text-indent: -0.5em;
 
         > li {
             margin-bottom: 0.5em;
 
             &:before {
-                content: '»';
-                display: inline-block;
-                width: 0.5em;
+                content: '➿';
+                display: block;
+                margin-left: -1em;
+                float: left;
             }
         }
     }
