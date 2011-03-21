@@ -325,4 +325,11 @@ code {
         margin-bottom: 0.67em;
         line-height: 1.5;
     }
+
+    // Prose-specific classes
+    .prose-illustration {
+        float: right;
+        margin: 0.5em;
+        margin-right: 0;
+    }
 }
