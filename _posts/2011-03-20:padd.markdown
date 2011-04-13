@@ -1,5 +1,5 @@
 ---
-categories: articles
+categories: essay
 tags: gadgets
 date: 2011/03/20 21:00:00
 title: P.A.D.D.
