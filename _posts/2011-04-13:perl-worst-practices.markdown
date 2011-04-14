@@ -37,7 +37,7 @@ There are several problems here:
 1. `FILEHANDLE` isn't a useful object.  It's not scoped; it's always global.  And you can't pass it around or store it anywhere.  (Okay, you CAN, but you have to do `\*FILEHANDLE` which is just stupid.)
 2. You will inevitably at some point try to `open FILEHANDLE, $user_provided_filename;` and then you are in for a world of pain.  The user could stick any of `open()`'s magical squiggles on his filename, possibly opening a pipe or reading `/etc/passwd`.
 3. You can't specify the encoding for the file.
-4. You can't open filenames that begin with, say, `&gt;`.  Yeah, yeah, I know.
+4. You can't open filenames that begin with, say, `>`.  Yeah, yeah, I know.
 
 Instead, do this:
 
