@@ -31,10 +31,10 @@ post_id = re.sub("[ ?]","-",post.title.lower()) %>
     <a class="js-disqus-comment-count" href="${post.permalink}#disqus_thread">View comments</a>
     % endif
 </div>
-<div class="prose">
-    ${self.post_prose(post)}
-</div>
+${self.post_prose(post)}
 
 <%def name="post_prose(post)">
-  ${post.content}
+<div class="prose">
+    ${post.content}
+</div>
 </%def>

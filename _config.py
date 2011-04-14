@@ -93,11 +93,46 @@ blog.custom_index = False
 #Post excerpts
 #If you want to generate excerpts of your posts in addition to the
 #full post content turn this feature on
-post_excerpt_enabled     = True
-post_excerpt_word_length = 25
+blog.post_excerpts.enabled     = True
+blog.post_excerpts.word_length = 250
 #Also, if you don't like the way the post excerpt is generated
 #You can define a new function
 #below called post_excerpt(content, num_words)
+
+def post_excerpt(content, num_words):
+    """Generate a post excerpt, better."""
+    # Need a number of characters, not a number of words.  Five letters per
+    # word, plus a space, is a good guess.
+    # TODO Should HTML really count against this limit?  Ehh.
+    import lxml.html
+    num_characters = num_words * 6
+
+    if len(content) <= num_characters:
+        return content
+
+    broken_html = content[:num_characters]
+    fragment = lxml.html.fromstring(broken_html)
+
+    # Insert an ellipsis at the end of the last node with text
+    last_text_node = None
+    last_tail_node = None
+    # Need to find the last node with a tail, OR the last node with
+    # text if it's later
+    for node in fragment.iter():
+        if node.tail:
+            last_tail_node = node
+            last_text_node = None
+        elif node.text:
+            last_text_node = node
+            last_tail_node = None
+
+    if last_text_node is not None:
+        last_text_node.text += '...'
+    if last_tail_node is not None:
+        last_tail_node.tail += '...'
+
+    # Serialize
+    return lxml.html.tostring(fragment)
 
 #### Blog pagination directory ####
 # blogofile places extra pages of your blog or category in

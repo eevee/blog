@@ -333,3 +333,11 @@ code {
         margin-right: 0;
     }
 }
+
+// Some chunk of HTML that was abruptly cut off
+.excerpt {
+    img {
+        max-width: 10em;
+        max-height: 10em;
+    }
+}
