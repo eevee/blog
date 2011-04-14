@@ -249,6 +249,15 @@ h2 {
     border-radius: 1em;
 }
 
+h3 {
+    font-size: 1.5em;
+    margin: 1em 0 0.5em;
+    padding: 0.25em 0.5em;
+    font-weight: normal;
+    border-bottom: 3px double $primary-color-dark;
+    color: $content-fg;
+}
+
 .doorhanger {
     margin: -1em 0 1em;
     padding: 0.5em;
@@ -287,6 +296,17 @@ a {
 
 code {
     padding: 0 0.25em;
+    background: $primary-color-litest;
+
+    // Don't give me a background inside <pre>, headers, etc.
+    h1 > &, h2 > &, h3 > &, pre > & {
+        background: none;
+    }
+}
+pre {
+    margin: 1em 2em;
+    padding: 0.5em;
+    line-height: 1.2;
     background: $primary-color-litest;
 }
 
