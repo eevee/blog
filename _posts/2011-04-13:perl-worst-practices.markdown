@@ -278,5 +278,6 @@ I could easily double the size of this list, but this is a good start.  Perl has
 
 I might update this in the future, or I might compile a similar document for Python instead.  Depends on the reaction.
 
+[common::sense]: http://search.cpan.org/perldoc?common::sense
 [Moose]: http://search.cpan.org/perldoc?Moose
 [Try::Tiny]: http://search.cpan.org/perldoc?Try::Tiny

@@ -300,6 +300,7 @@ code {
 
     // Don't give me a background inside <pre>, headers, etc.
     h1 > &, h2 > &, h3 > &, pre > & {
+        padding: 0;
         background: none;
     }
 }
