@@ -342,9 +342,15 @@ pre {
         }
     }
 
+    blockquote {
+        margin-left: 2em;
+        padding-left: 0.5em;
+        border-left: 0.5em solid $primary-color-litest;
+    }
+
     p {
-        margin-bottom: 0.67em;
-        line-height: 1.5;
+        margin-bottom: 0.75em;
+        line-height: 1.33;
     }
 
     // Prose-specific classes
