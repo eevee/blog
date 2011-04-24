@@ -77,17 +77,23 @@ I apologize for being Python-specific again, but the same could surely apply to 
 
 You see, Python doesn't have anonymous functions.  That means that this sort of thing in Perl:
 
-    do_twice(sub { print "this will print twice!" });
+$$code(lang=perl, style=friendly, linenums=true)
+do_twice(sub { print "this will print twice!" });
+$$/code
 
 Or JavaScript:
 
-    do_twice(function() { alert("this will show twice!") });
+$$code(lang=javascript, style=friendly, linenums=true)
+do_twice(function() { alert("this will show twice!") });
+$$/code
 
 ...can't be done directly in Python.  Functions have to be given names, and have to be defined on their own.  So you'd actually need to do this:
 
-    def thing_to_do_twice():
-        print "this will show twice!"
-    do_twice(thing_to_do_twice)
+$$code(lang=python, style=friendly, linenums=true)
+def thing_to_do_twice():
+    print "this will show twice!"
+do_twice(thing_to_do_twice)
+$$/code
 
 The horror!  (You can do some simple things inline in Python, and there are good reasons for this restriction, but the point stands that you can't just translate the Perl/JS/Ruby/etc. style directly to Python.)
 
@@ -122,15 +128,19 @@ Admittedly this is a followup from a specific case of the above, but it amazed m
 
 So, we told some guy that his particular problem could be solved by decorators.  If you're not familiar with Python, decorators are a cute little thing that lets you do this:
 
-    @some_decorator(argument)
-    def func():
-        ...
+$$code(lang=python, style=friendly, linenums=true)
+@some_decorator(argument)
+def func():
+    ...
+$$/code
 
 Which means the same as this:
 
-    def func():
-        ...
-    func = some_decorator(argument)(func)
+$$code(lang=python, style=friendly, linenums=true)
+def func():
+    ...
+func = some_decorator(argument)(func)
+$$/code
 
 So you can modify a function in some way when you define it.  This is handy for getting rid of a lot of boilerplate; a common example is that in a Web application, where every page corresponds to a function somewhere, you might want to use a decorator like `@needs_permission('can_comment')` to require a particular permission for a specific page.  Then the logic for checking permissions and rejecting people who don't have them is kept out of the main logic of the page.
 
@@ -147,18 +157,20 @@ He doesn't have the precise tool he wants, so everything else must be bad for _s
 
 I had a similar exchange with someone else, more recently.  He ran into this slightly obscure pitfall:
 
-    counter = 0
-    def count():
-        counter = counter + 1
-        print "I have been called", counter, "times!"
+$$code(lang=python, style=friendly, linenums=true)
+counter = 0
+def count():
+    counter = counter + 1
+    print "I have been called", counter, "times!"
 
-    count()
+count()
+$$/code
 
-This function will raise a `NameError`, claiming that `counter` doesn't exist on line 3.  If you don't know why, try to figure it out.
+This function will raise a `UnboundLocalError`, claiming that `counter` doesn't exist on line 3.  If you don't know why, try to figure it out.
 
 ...
 
-It's because Python doesn't have variable declaration.  Instead, variables are automatically declared if they're assigned to anywhere within the enclosing scope (function, class, file).  So when Python compiles the function, it sees `counter =` and knows that this function has its own _local_ variable called `counter`.  Later, when Python tries to run the function, it needs to compute `counter + 1`.  What's `counter`?  Well, it's a variable local to this function.  But nothing has been assigned to it yet, so Python raises the `NameError`.
+It's because Python doesn't have variable declaration.  Instead, variables are automatically declared if they're assigned to anywhere within the enclosing scope (function, class, file).  So when Python compiles the function, it sees `counter =` and knows that this function has its own _local_ variable called `counter`.  Later, when Python tries to run the function, it needs to compute `counter + 1`.  What's `counter`?  Well, it's a variable local to this function.  But nothing has been assigned to it yet, so Python raises the `UnboundLocalError`.
 
 There are a few ugly workarounds for this, and the most common—and probably more correct than the above—is to replace the function with a callable object that remembers its own state.  Python 3 also introduces a `nonlocal` keyword to solve the above problem; it tells Python "hey, I know I'm assigning to this variable here, but I really mean to assign to the one _outside_ this function."
 
@@ -166,14 +178,16 @@ The guy who had this problem had a strong functional programming background, and
 
 Now, a closure is just a function that remembers variables which existed outside of it when it was declared.  You know, like this:
 
-    def make_func():
-        x = 3
-        def func():
-            print x
-        return func
+$$code(lang=python, style=friendly, linenums=true)
+def make_func():
+    x = 3
+    def func():
+        print x
+    return func
 
-    f = make_func()
-    f()
+f = make_func()
+f()
+$$/code
 
 This correctly prints `3`.  Notice that you have no way of accessing or examining `x` outside of `make_func`; as far as code outside that function is concerned, it's been destroyed.  But the returned function remembers it, even though it was created outside that function.  (This might seem like the obvious way for things to work, but it's actually a very complex topic, somewhat recent, and still a surprise to programmers who have only been using e.g. C++.)
 
