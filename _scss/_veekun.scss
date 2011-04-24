@@ -295,21 +295,16 @@ a {
     }
 }
 
-code {
-    padding: 0 0.25em;
-    background: $primary-color-litest;
-
-    // Don't give me a background inside <pre>, headers, etc.
-    h1 > &, h2 > &, h3 > &, pre > & {
-        padding: 0;
-        background: none;
-    }
-}
 pre {
     margin: 1em 2em;
     padding: 0.5em;
     line-height: 1.2;
-    background: $primary-color-litest;
+
+    td & {
+        // Margins are not so useful inside <td>
+        margin: 0;
+        padding: 0.5em 1em;
+    }
 }
 
 
@@ -352,6 +347,26 @@ pre {
     p {
         margin-bottom: 0.75em;
         line-height: 1.33;
+    }
+
+    table {
+        margin-bottom: 1em;
+    }
+
+    code {
+        padding: 0 0.25em;
+        background: $primary-color-litest;
+
+        // Don't give me a background inside <pre>, headers, etc.
+        h1 > &, h2 > &, h3 > &, pre > & {
+            padding: 0;
+            background: none;
+        }
+    }
+
+    // Only decorate <pre> directly inside prose; other stuff uses it too much
+    & > pre {
+        background: $primary-color-litest;
     }
 
     // Prose-specific classes
