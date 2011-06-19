@@ -16,6 +16,7 @@ import operator
 import urlparse
 import hashlib
 import codecs
+import urllib
 
 import pytz
 import yaml
@@ -264,7 +265,7 @@ class Post:
 class Category:
     def __init__(self, name):
         self.name = unicode(name)
-        self.url_name = self.name.lower().replace(" ","-")
+        self.url_name = urllib.quote_plus(self.name.lower().replace(" ","-").encode('utf-8'))
         self.path = bf.util.site_path_helper(bf.config.controllers.blog.path,bf.config.controllers.blog.category_dir,self.url_name)
     def __eq__(self, other):
         if self.name == other.name:
