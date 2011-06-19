@@ -11,7 +11,7 @@ body {
     position: relative;
     min-height: 100%;
 
-    font-family: Helvetica, DejaVu Sans, sans-serif;
+    font-family: Lucida Sans, Lucida Grande, Droid Sans, DejaVu Sans, sans-serif;
     font-size: 12px;
     background: $body-bg;
 }
@@ -20,21 +20,10 @@ body {
     position: relative;
 
     background: $header-bg;
-    @include gradient(
-        background-image,
-        repeating-linear-gradient(
-            top left,
-            rgba($primary-color-lite, 0.5) 0%,
-            rgba($primary-color-lite, 0.5) 17%,
-            transparent 17%,
-            transparent 50%,
-            rgba($primary-color-lite, 0.5) 50%,
-            rgba($primary-color-lite, 0.5) 67%,
-            transparent 67%,
-            transparent 100%
-        )
-    );
-    background-size: 3px 3px, auto auto;
+    // This used to be a gradient, but alas, neither Gecko nor WebKit handled
+    // it well.  See: https://bugzilla.mozilla.org/show_bug.cgi?id=632324 and
+    // https://bugs.webkit.org/show_bug.cgi?id=54347
+    background-image: url(/site_img/pinstripe.png);
     box-shadow: 0 -1em 1em -1em $primary-color-dark inset;
 
     #title {
@@ -45,6 +34,7 @@ body {
         text-transform: lowercase;
 
         a {
+            text-decoration: none;
             color: $header-fg;
         }
     }
@@ -74,6 +64,10 @@ ul#navbar {
         )
     );
     box-shadow: 0 0 0.5em $shadows;
+
+    a {
+        text-decoration: none;
+    }
 
     > li {
         display: inline-block;
@@ -136,6 +130,10 @@ ul#breadcrumbs {
     font-weight: bold;
     text-transform: lowercase;
 
+    a {
+        text-decoration: none;
+    }
+
     li {
         display: inline-block;
         line-height: 1;
@@ -182,9 +180,11 @@ h1 {
     padding: 0.25em 1em;
     border: 1px solid $h1-bg;
     border-width: 1px 0;
+
     background: $h1-bg;
-    @include gradient(
+    @include gradient_under_image(
         background-image,
+        url(/site_img/eevee-bounding.png),
         linear-gradient(top,
             hsla(0%, 0%, 100%, 0.3),
             hsla(0%, 0%, 100%, 0.25) 33%,
@@ -192,6 +192,11 @@ h1 {
             hsla(0%, 0%, 100%, 0)
         )
     );
+    background-repeat: no-repeat;
+    // Not every browser understands multiple backgrounds; need fallback
+    background-position: center right;
+    background-position: center right, top left;
+
     color: $h1-fg;
     text-shadow: 1px 1px 1px $h1-shadow;
     box-shadow: 0 3px 3px -3px $shadows;
@@ -222,40 +227,37 @@ h1 {
             border-top: none;
         }
     }
+
+    a:hover {
+        color: lighten($link-hover, 50%);
+    }
 }
 
 h2 {
     font-size: 1.67em;
     margin: 1em 0 0.5em;
-    padding: 0.25em 1em;
+    padding: 0.25em 1em 0.25em 32px;
     font-weight: normal;
-    background: $secondary-color-lite;
-    @include gradient(
-        background-image,
-        repeating-linear-gradient(
-            top left,
-            rgba($secondary-color-litest, 0.5) 0%,
-            rgba($secondary-color-litest, 0.5) 17%,
-            transparent 17%,
-            transparent 50%,
-            rgba($secondary-color-litest, 0.5) 50%,
-            rgba($secondary-color-litest, 0.5) 67%,
-            transparent 67%,
-            transparent 100%
-        )
-    );
-    background-size: 3px 3px;
     border: 1px solid $secondary-color-litest;
     border-radius: 1em;
+    background-color: $secondary-color-lite;
+    // Not every browser understands multiple backgrounds; need fallback
+    background-image: url(/site_img/great-ball.png);
+    // Used to be a gradient; see the comment for #header
+    background-image: url(/site_img/great-ball.png), url(/site_img/pinstripe.png);
+    background-repeat: no-repeat;
+    background-repeat: no-repeat, repeat;
+    background-position: 4px center;
+    background-position: 4px center, left top;
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.33em;
     margin: 1em 0 0.5em;
-    padding: 0.25em 0.5em;
+    padding: 0.25em 0;
     font-weight: normal;
     border-bottom: 3px double $primary-color-dark;
-    color: $content-fg;
+    color: $primary-color-dark;
 }
 
 .doorhanger {
@@ -275,12 +277,11 @@ p, li {
 }
 
 p {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
 }
 
 a {
-    text-decoration: none;
-    font-weight: bold;
+    text-decoration: underline;
     color: $link-color;
 
     &:hover {
@@ -290,6 +291,7 @@ a {
     h1 &,
     h2 &,
     h3 & {
+        text-decoration: none;
         font-weight: inherit;
         color: inherit;
     }
@@ -312,6 +314,8 @@ pre {
 
 // Markdown contents
 .prose {
+    font-size: 13px;
+
     ul {
         margin: 1em;
 
@@ -345,8 +349,7 @@ pre {
     }
 
     p {
-        margin-bottom: 0.75em;
-        line-height: 1.33;
+        margin-bottom: 1em;
     }
 
     table {

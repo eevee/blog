@@ -26,6 +26,17 @@
     #{$property}: #{$gradient-value},           #{$gradient-value2};
 }
 
+// Use a gradient plus another value, e.g., multiple backgrounds.
+// For older browsers, falls back to just the other value.
+// gradient_under_image(property, url(...), linear-gradient(...))
+@mixin gradient_under_image($property, $arbitrary-value, $gradient-value) {
+    #{$property}: $arbitrary-value;
+    #{$property}: $arbitrary-value, -moz-#{$gradient-value};
+    #{$property}: $arbitrary-value, -webkit-#{$gradient-value};
+    #{$property}: $arbitrary-value, -o-#{$gradient-value};
+    #{$property}: $arbitrary-value, #{$gradient-value};
+}
+
 /******************************************************************************/
 // Other mixins
 
