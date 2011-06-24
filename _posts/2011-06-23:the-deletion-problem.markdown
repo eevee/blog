@@ -2,6 +2,7 @@
 categories: essay
 tags: floof, creation
 date: 2011/06/23 18:15:00
+updated: 2011/06/23 19:28:00
 title: The deletion problem
 mood: tired
 ---
@@ -24,6 +25,12 @@ I'm still not sold on this myself; I feel like there's some obvious use case I'm
 The biggest hurdle won't be with discouraging artists from deleting art they upload.  It'll be discouraging artists from uploading art they might want to delete in the first place.  If you don't well and truly want to share it, then you probably just shouldn't.  This is a tricky problem; if the site resembles deviantArt-style sites, it'll be easy to assume that it works the same way.  Big scary warnings are helpful, but "no deletion" sounds more like lazy development than a nod to the subtle philosophy I'm gradually figuring out here.
 
 I don't know.  Are you interested?  Are you an artist?  Am I crazy?
+
+**Addenda**: Some things that were mentioned to me:
+
+1. Wikis tend to require that you (often passively) license your contribution under a free documentation license or similar.  I doubt that would be amenable to everyone, but at the very least we'd need something granting permission to display the work indefinitely.
+
+2. One comment implied allowing an artist to remove art from his/her gallery without actually deleting it from the site.  This is actually kind of interesting, and hints at another problem I haven't much thought about: some artists let commissioners upload purchased work, but don't bother to upload the works themselves.  If "your gallery" is just all the art tagged as being created by you, how can we handle that?
 
 
 [damnatio]: http://en.wikipedia.org/wiki/Damnatio_memoriae
