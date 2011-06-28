@@ -9,6 +9,6 @@
 <script type="text/javascript" src="http://disqus.com/forums/${bf.config.blog.disqus.name}/embed.js"></script>
 <noscript>
     <p>Apologies, but I'm using <a href="http://disqus.com/">Disqus</a> comments, which rely on JavaScript.</p>
-    <p>If can't or would prefer not to run their code, you can always <a href="mailto:eevee.fuzzynotepad@veekun.com">email me</a> with your feedback.</p>
+    <p>If you can't or would prefer not to run their code, you can always <a href="mailto:eevee.fuzzynotepad@veekun.com">email me</a> with your feedback.</p>
 </noscript>
 % endif
