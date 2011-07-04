@@ -2,7 +2,18 @@
 categories: essay
 tags: perl
 date: 2011/06/27 03:10:00
+updated: 2011/07/03 18:30:00
 title: Perl 5 is dead, Perl 6 is a disaster
+---
+**ADDENDUM Jul 3**: I don't know how, but this got a bit of attention.  chromatic has compared me to Barbie, szabgab wondered if I'm a troll, and several people suggested that I'm trying to justify leaving Perl for Python.
+
+Remember, I'm a long-time Perl developer.  I'm the ideal target audience: someone who already uses your product.  In recent years I've become disillusioned with Perl, having watched several similar languages eclipse it.  I'm surely not unique in feeling this way.
+
+So why is the reaction to downplay what I said, rather than to tell me why I _should_ want to use Perl, or to make Perl something I'd want to use again?  chromatic suggests I just haven't done my research.  But if I don't know why I should use your product, that's _your_ problem.
+
+I did have an interesting discussion in #perl6 about this, which led to an insight.  Perl 6 is unusual, possibly even unique, in having a large spec written before an implementation.  I think some of its communication issues stem from this: outsiders see a spec and take it to mean an implementation isn't "1.0" until it reasonably matches the spec.  Implementors, on the other hand, regard the spec as merely a direction to move in.  So outsiders are waiting for a blessed 1.0 release, and think the insiders sound slow and stuffy for not giving them one.  Insiders are working on an organic thing, and think outsiders are obnoxious and impatient for wanting something absurd.
+
+Explaining the discrepancy to people who want to use Perl 6 is technically correct, but not practically helpful.  It may be better to carve up the Perl 6 spec into discrete and useful milestones, with some [big ol' colored chart][web devout standards support] detailing what's supported by which implementations.  (I actually can't tell right now what Rakudo supports and doesn't.  rakudo.org is just a blog.)
 ---
 I feel the need to respond to [this][article 1] [series][article 2] of [blog][article 3] [posts][article 4] [about][article 5] [Perl 6][article 6], whether it should be renamed, and what the implications are for Perl 5.
 
@@ -53,3 +64,5 @@ We had a good run, Perl.  I'll miss you.
 [article 6]: http://www.dagolden.com/index.php/1492/counterfactual-perl/
 [math problems]: http://justrakudoit.wordpress.com/2011/06/23/euler-5/
 [perldelta]: http://perldoc.perl.org/perldelta.html
+
+[web devout standards support]: http://www.webdevout.net/browser-support
