@@ -14,7 +14,9 @@ So why is the reaction to downplay what I said, rather than to tell me why I _sh
 I did have an interesting discussion in #perl6 about this, which led to an insight.  Perl 6 is unusual, possibly even unique, in having a large spec written before an implementation.  I think some of its communication issues stem from this: outsiders see a spec and take it to mean an implementation isn't "1.0" until it reasonably matches the spec.  Implementors, on the other hand, regard the spec as merely a direction to move in.  So outsiders are waiting for a blessed 1.0 release, and think the insiders sound slow and stuffy for not giving them one.  Insiders are working on an organic thing, and think outsiders are obnoxious and impatient for wanting something absurd.
 
 Explaining the discrepancy to people who want to use Perl 6 is technically correct, but not practically helpful.  It may be better to carve up the Perl 6 spec into discrete and useful milestones, with some [big ol' colored chart][web devout standards support] detailing what's supported by which implementations.  (I actually can't tell right now what Rakudo supports and doesn't.  rakudo.org is just a blog.)
+
 ---
+
 I feel the need to respond to [this][article 1] [series][article 2] of [blog][article 3] [posts][article 4] [about][article 5] [Perl 6][article 6], whether it should be renamed, and what the implications are for Perl 5.
 
 I'm a Perl guy.  I've been using Perl since I was _eleven_.  I got paid to write Perl for the past four-and-a-bit years.  Let's pretend I'm qualified to say anything here.
