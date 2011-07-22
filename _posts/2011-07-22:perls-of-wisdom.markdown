@@ -2,6 +2,7 @@
 categories: essay
 tags: perl
 date: 2011/07/22 16:17:00
+updated: 2011/07/22 16:38:00
 title: Perls of Wisdom
 ---
 Ha, ha!  A hilarious and original pun.
@@ -228,6 +229,20 @@ Most important of all, I think, is to admit that Perl _might have_ a bit of a po
 ...
 
 Don't look at me; I have no idea.
+
+---
+
+**Addendum**: The very first comment I got about this post was the following:
+
+> wow
+> as an uneducated code monkey, i don't even consider perl as a webdev language at all
+> like, php is quick and easy and makes it easy to shoot yourself
+> asp/.net is this microsoft thing that a lot of people use
+> flex is this adobe thing that less people use
+> when i think of "perl" i think of "more powerful than bash for stuff"
+> (that is just my perception, though)
+
+This was from an IRC channel that mentions Perl Web development with some regularity.  I am _concerned_.
 
 [mop]: https://github.com/stevan/p5-mop/blob/master/proposal/p5-mop.md
 [barewords in open]: http://www.learning-perl.com/?p=235
