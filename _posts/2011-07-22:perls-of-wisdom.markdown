@@ -2,7 +2,7 @@
 categories: essay
 tags: perl
 date: 2011/07/22 16:17:00
-updated: 2011/07/22 16:38:00
+updated: 2011/07/23 12:52:00
 title: Perls of Wisdom
 ---
 Ha, ha!  A hilarious and original pun.
@@ -243,6 +243,22 @@ Don't look at me; I have no idea.
     > (that is just my perception, though)
 
 This was from an IRC channel that mentions Perl Web development with some regularity.  I am _concerned_.
+
+---
+
+**Addendum Sat Jul 23, 2011**: There are a couple obvious omissions from the above list of Perl 5 things to fix, though with less-than-obvious solutions.
+
+* Function calling/returning conventions.  Much like the object support, Perl more allows you to invent your own calling conventions than actually providing you with one.  CPAN modules meant to fix this are generally weird/awkward, slow, or both.  More than anything else, I think this is a problem that can only be solved well in core.
+
+    One subtle problem is that of passing/returning lists; passing lists loses the runtime "odd number of elements" warning, and returning an arbitrarily-sized list is potentially slow since the operation is always a copy.  A new kind of sub might be able to optimize around this problem.  Or maybe we should just always return arrayrefs now that core functions treat arrayrefs like arrays.
+
+* Speaking of, with core functions treating arrayrefs just like arrays, we're not too far off from just having arrays act as opaque containers.  With the two becoming increasingly interchangeable, I actually kind of worry that newcomers will find the distinction even harder to grasp.  `@array` can't be up and changed without breaking virtually all existing code, though, so I wonder what can be reasonably done about this.  Maybe in the far-off future, sigils will vanish entirely and tutorials will use `my $foo = [1..3];` as the canonical way to create an array.
+
+* Fix string-vs-bytes handling.  Well, maybe.  I'm ashamed to admit I don't even quite grok how this works at the moment, as the support has changed somewhat in every major release of Perl since 5.8, and with the continued backwards compatibility it's difficult to even notice a difference.  With the last big Perl Web project I did, I just kind of held my breath and assumed it would all work; thanks to Catalyst's effort, it kind of did.  But I'm not very _confident_ about that.
+
+    Despite the obvious massive problems with the porting effort, I still think Python 3 is the only language to have gotten this right.  For those not familiar: the `str` class in Python 3 is Unicodey (i.e., a character is a Unicode codepoint), but all I/O by default yields `bytes` (where a character or slice just gives you integers).  You can convert back and forth easily enough with `str.encode()` and `bytes.decode()`, and printing a `str` to a byte-y medium like a terminal or file will encode to UTF-8 by default, but otherwise Python will explode at you if you try to casually mingle the two.
+
+* Template Toolkit blows, man.  Someone invent something better.  Yeah, I know, this isn't part of Perl core, but TT makes Web development look clunky and 90s.  It's great for really dumb templates, but it tries very hard to be richer than that and doesn't do so well.
 
 [mop]: https://github.com/stevan/p5-mop/blob/master/proposal/p5-mop.md
 [barewords in open]: http://www.learning-perl.com/?p=235
