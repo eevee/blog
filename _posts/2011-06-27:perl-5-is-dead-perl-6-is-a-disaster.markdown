@@ -5,6 +5,10 @@ date: 2011/06/27 03:10:00
 updated: 2011/07/03 18:30:00
 title: Perl 5 is dead, Perl 6 is a disaster
 ---
+**ADDENDUM Sep 13**: This got a surprise [translation into Bulgarian][bulgarian translation].
+
+---
+
 **ADDENDUM Jul 3**: I don't know how, but this got a bit of attention.  chromatic has compared me to Barbie, szabgab wondered if I'm a troll, and several people suggested that I'm trying to justify leaving Perl for Python.
 
 Remember, I'm a long-time Perl developer.  I'm the ideal target audience: someone who already uses your product.  In recent years I've become disillusioned with Perl, having watched several similar languages eclipse it.  I'm surely not unique in feeling this way.
@@ -64,6 +68,7 @@ We had a good run, Perl.  I'll miss you.
 [article 4]: http://blogs.perl.org/users/aristotle/2011/06/bead-ivory-off-white.html
 [article 5]: http://www.modernperlbooks.com/mt/2011/06/iridescent-bivalve-secretions-are-from-new-jersey-nacre-is-from-mit.html
 [article 6]: http://www.dagolden.com/index.php/1492/counterfactual-perl/
+[bulgarian translation]: http://www.fatcow.com/edu/perl-disaster-bl/
 [math problems]: http://justrakudoit.wordpress.com/2011/06/23/euler-5/
 [perldelta]: http://perldoc.perl.org/perldelta.html
 
