@@ -318,12 +318,13 @@ pre {
 
     ul {
         margin: 1em;
+        padding-left: 1em;
 
         > li {
             margin-bottom: 0.5em;
 
             &:before {
-                content: '➿';
+                content: '‣';
                 display: block;
                 margin-left: -1em;
                 float: left;
