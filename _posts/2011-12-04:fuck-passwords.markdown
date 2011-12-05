@@ -12,7 +12,7 @@ I don't do that.  Let me tell you what i do.
 
 I generate a different password for every service, based on a convoluted master password and the name of the thing.  I do this because it's what you're _supposed_ to do; it's what security nerds (including myself for the purposes of this post) tell everyone else to do.  "Ho ho!" we all chuckled to ourselves after the Gawker leak, and the subsequent breakins to various other things that used the same passwords.  "If only these chumps had been generating different random passwords for every service!"
 
-So my passwords look like ``'fC`29ap5w78r3IJ``, or `Ab3HE4 2Iv5hJk\K`, or `mw@\_h&lt;~o04neHiJ{`.  Those are actual examples i just generated.  I'm eating my own [dogfood][], so to speak.
+So my passwords look like ``'fC`29ap5w78r3IJ``, or `Ab3HE4 2Iv5hJk\K`, or `mw@\_h<~o04neHiJ{`.  Those are actual examples i just generated.  I'm eating my own [dogfood][], so to speak.
 
 It's not without its drawbacks.
 
@@ -79,7 +79,7 @@ Here is a list just of places i've tried to use recently:
 * **[Chase](http://www.chase.com/)**: 7–32 letters and digits only
 * **[Capital One](http://www.capitalone.com/)**: 8–15 letters, digits, underscores, hyphens.  _NOT CASE SENSITIVE_
 * **[Fidelity](http://www.fidelity.com/)**: 6–12 letters and digits only
-* **[TD Ameritrade](http://www.tdameritrade.com/)**: 7–15 characters, no "special characters", whatever that means.  Fun story: i used to use a different broker, which was acquired by this one.  My old, generated password had a `&lt;` in it.  For some horrifying reason, this prevented me from logging into TD Ameritrade.  I had to call customer support, and the guy there—i am not making this up—reset my password to something like `abc123`.
+* **[TD Ameritrade](http://www.tdameritrade.com/)**: 7–15 characters, no "special characters", whatever that means.  Fun story: i used to use a different broker, which was acquired by this one.  My old, generated password had a `<` in it.  For some horrifying reason, this prevented me from logging into TD Ameritrade.  I had to call customer support, and the guy there—i am not making this up—reset my password to something like `abc123`.
 * **[AT&T](http://www.att.com/)**: 6+ letters, digits, underscores, hyphens (which they incorrectly illustrate with an en dash)
 * I'll give props to **[Wells Fargo](http://www.wellsfargo.com/)**, which allows 6–14 of any character.  Except my generated passwords are all 16 characters!!
 * Further props: **[PayPal](http://www.paypal.com/)** claims to want merely 8 or more characters.  Too bad i hate PayPal for other _perfectly legitimate_ reasons.
